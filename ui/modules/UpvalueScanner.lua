@@ -564,17 +564,15 @@ viewElementsContext:SetCallback(function()
     local temporaryElements = selectedUpvalue and selectedUpvalue.TemporaryElements
     local newHeight = 0
 
-    if temporaryElements then
+    if temporaryElements then -- closes elements
         print("1")
         for index, _v in pairs(temporaryElements) do
             local elementLog = selectedUpvalueLog.Elements[toString(index)]
-            newHeight = newHeight - (elementLog.AbsoluteSize.Y + 5)
-
             elementLog:Destroy()
         end
 
         selectedUpvalue.TemporaryElements = nil
-    else
+    else -- opens elements
         print("2")
         local scanned = selectedUpvalue.Scanned
         temporaryElements = {}
