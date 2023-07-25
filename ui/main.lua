@@ -17,6 +17,7 @@ local ScriptScanner
 local ModuleScanner
 local UpvalueScanner
 local ConstantScanner
+local Explorer
 
 xpcall(function()
 	RemoteSpy = import("ui/modules/RemoteSpy")
@@ -32,11 +33,17 @@ end, function(err)
 	else
 		message = "Report this error in Hydronium's server:\n\n" .. err
 	end
-
+	warn('Error:', err);
 	MessageBox.Show("An error has occurred", message, MessageType.OK, function()
 		Interface:Destroy() 
 	end)
 end)
+
+local Success, Error = pcall(function()
+	Explorer = import("ui/modules/Explorer")
+end);
+
+if not Success then warn('Error loading Explorer: '..Error) end;
 
 local constants = {
 	opened = UDim2.new(0.5, -325, 0.5, -175),
