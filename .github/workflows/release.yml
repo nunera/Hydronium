@@ -17,7 +17,7 @@ jobs:
         id: get_version
         run: |
           version=$(sed -nE 's/_G\.Version = "v([0-9]+\.[0-9]+\.[0-9]+)"/\1/p' init.lua)
-          echo "::set-output name=version::$version"
+          echo "::set-output name=version::v$version"
 
       - name: Create Release
         id: create_release
