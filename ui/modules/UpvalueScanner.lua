@@ -572,7 +572,6 @@ viewElementsContext:SetCallback(function()
         selectedUpvalue.TemporaryElements = nil
     else
         local scanned = selectedUpvalue.Scanned
-        print(temporaryElements)
         temporaryElements = {}
 
         for i,v in pairs(selectedUpvalue.Value) do
