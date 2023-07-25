@@ -97,14 +97,14 @@ Collapse.MouseButton1Click:Connect(function()
 end)
 
 Interface.Name = HttpService:GenerateGUID(false)
---if getHui then
---	Interface.Parent = getHui()
---else
---	if syn then
---		syn.protect_gui(Interface)
---	end
+if getHui then
+	Interface.Parent = getHui()
+else
+	if syn then
+		syn.protect_gui(Interface)
+	end
 
-Interface.Parent = CoreGui
+	Interface.Parent = CoreGui
 end
 print("Hydronium ".._G.Version.." Loaded!")
 return Interface
