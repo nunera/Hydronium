@@ -6,7 +6,7 @@ if oh then
     oh.Exit()
 end
 
-local web = true
+local web = false
 local user = "nunera" -- change if you're using a fork
 local branch = "revision"
 local importCache = {}
