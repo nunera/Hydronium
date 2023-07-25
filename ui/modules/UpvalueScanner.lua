@@ -91,6 +91,7 @@ end
 local function addElement(upvalueLog, upvalue, index, value, temporary)
     print("a")
     local elementLog = Assets.Element:Clone()
+    print(elementLog.Parent)
     local elementIndexType = type(index)
     local elementValueType = type(value)
     local indexText = toString(index)
@@ -568,9 +569,9 @@ viewElementsContext:SetCallback(function()
         print("1")
         for index, _v in pairs(temporaryElements) do
             local elementLog = selectedUpvalueLog.Elements[toString(index)]
+            newHeight = newHeight - (elementLog.AbsoluteSize.Y + 5)
             elementLog:Destroy()
         end
-
         selectedUpvalue.TemporaryElements = nil
     else -- opens elements
         print("2")
