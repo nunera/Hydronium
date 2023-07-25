@@ -3,7 +3,7 @@ name: Auto Release
 on:
   push:
     branches:
-      - revision
+      - main
 
 jobs:
   release:
@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: List repository files
+        run: ls -R
 
       - name: Get version from init.lua
         id: get_version
@@ -22,7 +25,7 @@ jobs:
       - name: Read loadstring.lua
         id: read_file
         run: |
-          contents=$(cat loadstring.lua)
+          contents=$(cat path/to/loadstring.lua)
           echo "::set-output name=contents::$contents"
 
       - name: Create Release
@@ -30,11 +33,11 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            Loadstring.lua
+            path/to/loadstring.lua
           data: |
             {
               "tag_name": "${{ steps.get_version.outputs.version }}",
-              "target_commitish": "revision",
+              "target_commitish": "main",
               "name": "Release ${{ steps.get_version.outputs.version }}",
               "body": "```lua\n${{ steps.read_file.outputs.contents }}\n```"
             }
