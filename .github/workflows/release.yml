@@ -17,7 +17,7 @@ jobs:
         id: get_version
         run: |
           version=$(sed -nE 's/_G\.Version = v([0-9]+\.[0-9]+\.[0-9]+)/\1/p' init.lua)
-          echo "::set-output name=version::$version"
+          echo "VERSION=${version}" >> $GITHUB_ENV
 
       - name: Create Release
         id: create_release
@@ -25,8 +25,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
-          tag_name: ${{ steps.get_version.outputs.version }} # Use the extracted version directly as the tag name (e.g., 1.1.2)
-          release_name: Release ${{ steps.get_version.outputs.version }}
+          tag_name: ${{ env.VERSION }} # Use the extracted version from the environment variable as the tag name
+          release_name: Release ${{ env.VERSION }}
           body: |
             ```lua
             loadstring(game:HttpGet("http://gg.gg/Hydronium"))()
