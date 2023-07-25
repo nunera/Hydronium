@@ -44,6 +44,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: init.lua
-          asset_name: init.lua
+          asset_path: loadstring.lua
+          asset_name: loadstring.lua
           asset_content_type: text/plain
