@@ -6,37 +6,41 @@ on:
       - revision
 
 jobs:
-  release:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Get version from init.lua
+      - name: Get Version from init.lua
         id: get_version
         run: |
-          version=$(awk -F"'" '/_G.Version/{print $2}' init.lua)
+          version=$(grep -oP '(?<=_G\.Version = v)[0-9]+\.[0-9]+\.[0-9]+' init.lua)
           echo "::set-output name=version::$version"
-
-      - name: Read loadstring.lua
-        id: read_file
-        run: |
-          contents=$(cat Loadstring.lua)
-          echo "::set-output name=contents::$contents"
 
       - name: Create Release
         id: create_release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: |
-            Loadstring.lua
-          data: |
-            {
-              "tag_name": "${{ steps.get_version.outputs.version }}",
-              "target_commitish": "revision",
-              "name": "Release ${{ steps.get_version.outputs.version }}",
-              "body": "```lua\n${{ steps.read_file.outputs.contents }}\n```"
-            }
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.get_version.outputs.version }}
+          release_name: Release ${{ steps.get_version.outputs.version }}
+          body: |
+            ```lua
+            loadstring(game:HttpGet("http://gg.gg/Hydronium"))()
+            ```
+            # Changes
+            ${{ github.event.head_commit.message }}
+
+      - name: Upload Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: init.lua
+          asset_name: init.lua
+          asset_content_type: text/plain
