@@ -78,8 +78,8 @@ local elementTypeDropdown = Dropdown.new(modifyElementType)
 
 local constants = {
     tempElementColor = Color3.fromRGB(10, 30, 10),
-    tempUpvalueColor = Color3.fromRGB(40, 20, 20),
-    tempBorderColor = Color3.fromRGB(20, 0, 0)
+    tempUpvalueColor = Color3.fromRGB(20, 40, 20),
+    tempBorderColor = Color3.fromRGB(0, 2, 0)
 }
 
 local function typeMismatchMessage()
