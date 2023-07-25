@@ -13,12 +13,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Get version from init.lua
+      - name: Extract version from init.lua
         id: get_version
         run: |
           version=$(grep -oP '(?<=_G.Version = v)[0-9]+\.[0-9]+\.[0-9]+' init.lua)
           echo "Version: $version"
           echo "::set-output name=version::$version"
+        shell: bash
 
       - name: Get loadstring.lua content
         id: get_loadstring_content
@@ -26,6 +27,7 @@ jobs:
           content=$(cat loadstring.lua)
           echo "Content: $content"
           echo "::set-output name=content::$content"
+        shell: bash
 
       - name: Create Release
         id: create_release
