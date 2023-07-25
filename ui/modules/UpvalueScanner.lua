@@ -558,12 +558,12 @@ getScriptContext:SetCallback(function()
 end)
 
 viewElementsContext:SetCallback(function()
-    print(1)
+    print("sad")
+    warn(eahwhea)
     local temporaryElements = selectedUpvalue and selectedUpvalue.TemporaryElements
     local newHeight = 0
 
     if temporaryElements then
-        print(2)
         for index, _v in pairs(temporaryElements) do
             local elementLog = selectedUpvalueLog.Elements[toString(index)]
             newHeight = newHeight - (elementLog.AbsoluteSize.Y + 5)
@@ -573,7 +573,6 @@ viewElementsContext:SetCallback(function()
 
         selectedUpvalue.TemporaryElements = nil
     else
-        print(3)
         local scanned = selectedUpvalue.Scanned
         temporaryElements = {}
 
