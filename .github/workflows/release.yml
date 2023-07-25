@@ -3,7 +3,7 @@ name: Auto Release
 on:
   push:
     branches:
-      - revision
+      - main
 
 jobs:
   release:
@@ -16,7 +16,7 @@ jobs:
       - name: Get version from init.lua
         id: get_version
         run: |
-          version=$(grep -oP '(?<=_G.Version = v)[0-9]+\.[0-9]+\.[0-9]+' init.lua)
+          version=$(awk -F"'" '/_G.Version/{print $2}' init.lua)
           echo "::set-output name=version::$version"
 
       - name: Read loadstring.lua
