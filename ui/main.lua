@@ -107,5 +107,5 @@ else
 
 	Interface.Parent = CoreGui
 end
-print("Hydronium v1.0.2 Loaded!")
+print("Hydronium ".._G.Version.." Loaded!")
 return Interface
