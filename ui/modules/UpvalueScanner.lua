@@ -77,9 +77,9 @@ local upvalueTypeDropdown = Dropdown.new(modifyUpvalueType)
 local elementTypeDropdown = Dropdown.new(modifyElementType)
 
 local constants = {
-    tempElementColor = Color3.fromRGB(10, 30, 10),
-    tempUpvalueColor = Color3.fromRGB(20, 40, 20),
-    tempBorderColor = Color3.fromRGB(0, 2, 0)
+    tempElementColor = Color3.fromRGB(10, 10, 30),
+    tempUpvalueColor = Color3.fromRGB(20, 20, 40),
+    tempBorderColor = Color3.fromRGB(0, 0, 20)
 }
 
 local function typeMismatchMessage()
@@ -89,12 +89,14 @@ local function typeMismatchMessage()
 end
 
 local function addElement(upvalueLog, upvalue, index, value, temporary)
+    print("a")
     local elementLog = Assets.Element:Clone()
     local elementIndexType = type(index)
     local elementValueType = type(value)
     local indexText = toString(index)
 
     if temporary then
+        print("temp")
         elementLog.ImageColor3 = constants.tempElementColor
         elementLog.Border.ImageColor3 = constants.tempBorderColor
     end
@@ -119,6 +121,7 @@ local function addElement(upvalueLog, upvalue, index, value, temporary)
 end
 
 local function updateElement(upvalueLog, index, value)
+    print("u")
     local indexText = toString(index)
     local elementIndexType = type(index)
     local elementValueType = type(value)
@@ -558,10 +561,12 @@ getScriptContext:SetCallback(function()
 end)
 
 viewElementsContext:SetCallback(function()
+    print("v")
     local temporaryElements = selectedUpvalue and selectedUpvalue.TemporaryElements
     local newHeight = 0
 
     if temporaryElements then
+        print("1")
         for index, _v in pairs(temporaryElements) do
             local elementLog = selectedUpvalueLog.Elements[toString(index)]
             newHeight = newHeight - (elementLog.AbsoluteSize.Y + 5)
@@ -571,6 +576,7 @@ viewElementsContext:SetCallback(function()
 
         selectedUpvalue.TemporaryElements = nil
     else
+        print("2")
         local scanned = selectedUpvalue.Scanned
         temporaryElements = {}
 
