@@ -34,7 +34,7 @@ jobs:
           data: |
             {
               "tag_name": "${{ steps.get_version.outputs.version }}",
-              "target_commitish": "main",
+              "target_commitish": "revision",
               "name": "Release ${{ steps.get_version.outputs.version }}",
               "body": "```lua\n${{ steps.read_file.outputs.contents }}\n```"
             }
