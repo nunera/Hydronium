@@ -313,10 +313,6 @@ upvalueList:BindContextMenu(closureContextMenu)
 
 deepSearch:SetCallback(function(enabled)
     deepSearchFlag = enabled
-    
-    if enabled then
-        MessageBox.Show("Notice", "Deep searching may result in longer scan times!", MessageType.OK)
-    end
 end)
 
 Search.MouseButton1Click:Connect(addUpvalues)
@@ -576,6 +572,7 @@ viewElementsContext:SetCallback(function()
         selectedUpvalue.TemporaryElements = nil
     else
         local scanned = selectedUpvalue.Scanned
+        print(temporaryElements)
         temporaryElements = {}
 
         for i,v in pairs(selectedUpvalue.Value) do
