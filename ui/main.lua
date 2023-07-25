@@ -107,5 +107,5 @@ else
 
 	Interface.Parent = CoreGui
 end
-
+print("Hydronium v1.0.0 Loaded!")
 return Interface
