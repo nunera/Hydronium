@@ -1,4 +1,4 @@
-_G.Version = "v1.0.8"
+_G.Version = "v1.0.9"
 print("Attempting ".._G.Version.." load...")
 local environment = assert(getgenv, "<OH> ~ Your exploit is not supported")()
 

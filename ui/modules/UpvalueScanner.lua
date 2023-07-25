@@ -95,6 +95,7 @@ local function addElement(upvalueLog, upvalue, index, value, temporary)
     local indexText = toString(index)
 
     if temporary then
+        print("eeeeee")
         elementLog.ImageColor3 = constants.tempElementColor
         elementLog.Border.ImageColor3 = constants.tempBorderColor
     end
@@ -119,6 +120,7 @@ local function addElement(upvalueLog, upvalue, index, value, temporary)
 end
 
 local function updateElement(upvalueLog, index, value)
+    print("update")
     local indexText = toString(index)
     local elementIndexType = type(index)
     local elementValueType = type(value)
