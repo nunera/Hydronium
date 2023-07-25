@@ -580,8 +580,7 @@ viewElementsContext:SetCallback(function()
                 what.Parent = selectedUpvalueLog.Elements
                 newHeight = newHeight + what.AbsoluteSize.Y + 5
                 newHeight = newHeight + elementLog.AbsoluteSize.Y + 5
-                table.insert(temporaryElements, what)
-                table.insert(temporaryElements, elementLog)
+                temporaryElements[i] = what
             end
         end 
 
