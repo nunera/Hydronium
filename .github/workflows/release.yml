@@ -1,4 +1,4 @@
-name: Auto Release
+name: Release Workflow
 
 on:
   push:
@@ -16,18 +16,17 @@ jobs:
       - name: Get Version from init.lua
         id: get_version
         run: |
-          version=$(sed -nE 's/_G\.Version = v([0-9]+\.[0-9]+\.[0-9]+)/\1/p' init.lua)
-          echo "VERSION=${version}" >> $GITHUB_ENV
+          version=$(sed -nE 's/_G\.Version = "v([0-9]+\.[0-9]+\.[0-9]+)"/\1/p' init.lua)
+          echo "::set-output name=version::$version"
 
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
-          VERSION: ${{ env.VERSION }} # Pass the VERSION environment variable to the create-release action
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ env.VERSION }} # Use the extracted version from the environment variable as the tag name
-          release_name: Release ${{ env.VERSION }}
+          tag_name: ${{ steps.get_version.outputs.version }}
+          release_name: ${{ steps.get_version.outputs.version }}
           body: |
             ```lua
             loadstring(game:HttpGet("http://gg.gg/Hydronium"))()
