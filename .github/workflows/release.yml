@@ -24,6 +24,7 @@ jobs:
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
+          VERSION: ${{ env.VERSION }} # Pass the VERSION environment variable to the create-release action
         with:
           tag_name: ${{ env.VERSION }} # Use the extracted version from the environment variable as the tag name
           release_name: Release ${{ env.VERSION }}
