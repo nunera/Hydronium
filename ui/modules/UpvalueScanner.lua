@@ -89,15 +89,12 @@ local function typeMismatchMessage()
 end
 
 local function addElement(upvalueLog, upvalue, index, value, temporary)
-    print("a")
     local elementLog = Assets.Element:Clone()
-    print(elementLog.Parent)
     local elementIndexType = type(index)
     local elementValueType = type(value)
     local indexText = toString(index)
 
     if temporary then
-        print("temp")
         elementLog.ImageColor3 = constants.tempElementColor
         elementLog.Border.ImageColor3 = constants.tempBorderColor
     end
@@ -561,12 +558,10 @@ getScriptContext:SetCallback(function()
 end)
 
 viewElementsContext:SetCallback(function()
-    print("v")
     local temporaryElements = selectedUpvalue and selectedUpvalue.TemporaryElements
     local newHeight = 0
 
     if temporaryElements then -- closes elements
-        print("1")
         for index, _v in pairs(temporaryElements) do
             local elementLog = selectedUpvalueLog.Elements[toString(index)]
             newHeight = newHeight - (elementLog.AbsoluteSize.Y + 5)
@@ -574,7 +569,6 @@ viewElementsContext:SetCallback(function()
         end
         selectedUpvalue.TemporaryElements = nil
     else -- opens elements
-        print("2")
         local scanned = selectedUpvalue.Scanned
         temporaryElements = {}
 
@@ -582,9 +576,12 @@ viewElementsContext:SetCallback(function()
             if not scanned[i] then
                 local elementLog = addElement(selectedUpvalueLog, selectedUpvalue, i, v, true)
                 elementLog.Parent = selectedUpvalueLog.Elements
-
+                local what = addUpvalue(selectedUpvalue,true)
+                what.Parent = selectedUpvalueLog.Elements
+                newHeight = newHeight + what.AbsoluteSize.Y + 5
                 newHeight = newHeight + elementLog.AbsoluteSize.Y + 5
-                temporaryElements[i] = elementLog
+                table.insert(temporaryElements, what)
+                table.insert(temporaryElements, elementLog)
             end
         end 
 
