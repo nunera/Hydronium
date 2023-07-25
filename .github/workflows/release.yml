@@ -13,9 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: List repository files
-        run: ls -R
-
       - name: Get version from init.lua
         id: get_version
         run: |
@@ -25,7 +22,7 @@ jobs:
       - name: Read loadstring.lua
         id: read_file
         run: |
-          contents=$(cat path/to/loadstring.lua)
+          contents=$(cat Loadstring.lua)
           echo "::set-output name=contents::$contents"
 
       - name: Create Release
@@ -33,7 +30,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            path/to/loadstring.lua
+            Loadstring.lua
           data: |
             {
               "tag_name": "${{ steps.get_version.outputs.version }}",
