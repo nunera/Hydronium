@@ -121,7 +121,6 @@ local function addElement(upvalueLog, upvalue, index, value, temporary)
 end
 
 local function updateElement(upvalueLog, index, value)
-    print("u")
     local indexText = toString(index)
     local elementIndexType = type(index)
     local elementValueType = type(value)
