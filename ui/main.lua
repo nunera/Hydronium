@@ -28,9 +28,9 @@ xpcall(function()
 end, function(err)
 	local message
 	if err:find("valid member") then
-		message = "The UI has updated, please rejoin and restart. If you get this message more than once, screenshot this message and report it in the Hydroxide server.\n\n" .. err
+		message = "The UI has updated, please rejoin and restart. If you get this message more than once, screenshot this message and report it in the Hydronium server.\n\n" .. err
 	else
-		message = "Report this error in Hydroxide's server:\n\n" .. err
+		message = "Report this error in Hydronium's server:\n\n" .. err
 	end
 
 	MessageBox.Show("An error has occurred", message, MessageType.OK, function()
