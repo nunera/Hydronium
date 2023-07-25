@@ -16,7 +16,7 @@ jobs:
       - name: Get Version from init.lua
         id: get_version
         run: |
-          version=$(grep -oP '(?<=_G\.Version = v)[0-9]+\.[0-9]+\.[0-9]+' init.lua)
+          version=$(sed -nE 's/_G\.Version = v([0-9]+\.[0-9]+\.[0-9]+)/\1/p' init.lua)
           echo "::set-output name=version::$version"
 
       - name: Create Release
