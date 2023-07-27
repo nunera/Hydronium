@@ -401,17 +401,9 @@ modifyUpvalueButtons.Cancel.MouseButton1Click:Connect(function()
 end)
 
 customUpvalueButtons.Set.MouseButton1Click:Connect(function()
-    local newValue = setValue(
-        customUpvalueValue.Text,
-        customUpvalueName.Text,
-        customUpvalueTypeDropdown)
-    )
-    if newValue ~= nil then
-        selectedUpvalue:Set(newValue)
-        customUpvalueValue.Text = ""
-        customUpvalueName.Text = ""
-        customUpvalue:Hide()
-    end
+    customUpvalueValue.Text = ""
+    customUpvalueName.Text = ""
+    customUpvalue:Hide()
 end)
 
 customUpvalueButtons.Cancel.MouseButton1Click:Connect(function()
