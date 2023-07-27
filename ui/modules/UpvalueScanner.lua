@@ -610,6 +610,10 @@ end
 changeUpvalueContext:SetCallback(changeUpvalue)
 changeTableContext:SetCallback(changeUpvalue)
 
+customUpvalueChange:SetCallback(function()
+        
+end)
+
 changeElementContext:SetCallback(function()
     if selectedUpvalue and selectedElement then
         local index = selectedElement
