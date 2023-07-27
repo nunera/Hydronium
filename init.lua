@@ -1,4 +1,4 @@
-_G.Version = "v1.3.9"
+_G.Version = "v1.4.0"
 print("Attempting ".._G.Version.." load...")
 local environment = assert(getgenv, "<OH> ~ Your exploit is not supported")()
 
@@ -144,7 +144,7 @@ environment.oh = {
             end
         end
 
-        local ui = importCache["rbxassetid://14217382721"]
+        local ui = importCache["rbxassetid://14217530095"]
         local assets = importCache["rbxassetid://5042114982"]
 
         if ui then
