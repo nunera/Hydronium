@@ -55,9 +55,10 @@ local upvalueScriptContext = ContextMenuButton.new("rbxassetid://4800244808", "G
 local tableScriptContext = ContextMenuButton.new("rbxassetid://4800244808", "Generate Script")
 local elementScriptContext = ContextMenuButton.new("rbxassetid://4800244808", "Generate Script")
 local getScriptContext = ContextMenuButton.new("rbxassetid://4891705738", "Get Script Path")
+local customUpvalueChange = ContextMenuButton.new("rbxassetid://4800244808", "Change Custom Upvalue")
 
 local closureContextMenu = ContextMenu.new({ spyClosureContext, viewUpvaluesContext, getScriptContext })
-local tableContextMenu = ContextMenu.new({ changeTableContext, viewElementsContext, tableScriptContext })
+local tableContextMenu = ContextMenu.new({ changeTableContext, viewElementsContext, tableScriptContext, customUpvalueChange })
 local upvalueContextMenu = ContextMenu.new({ changeUpvalueContext, upvalueScriptContext })
 local elementContextMenu = ContextMenu.new({ changeElementContext, elementScriptContext })
 
