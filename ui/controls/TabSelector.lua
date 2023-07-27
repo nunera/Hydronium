@@ -2,7 +2,7 @@ local TweenService = game:GetService("TweenService")
 
 local TabSelector = {}
 
-local Base = import("rbxassetid://14186888710").Base
+local Base = import("rbxassetid://14217382721").Base
 local Tabs = Base.Tabs.Container
 local Pages = Base.Body.Pages
 

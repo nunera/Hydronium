@@ -19,7 +19,7 @@ local TabSelector = import("ui/controls/TabSelector")
 local MessageBox, MessageType = import("ui/controls/MessageBox")
 local ContextMenu, ContextMenuButton = import("ui/controls/ContextMenu")
 
-local Base = import("rbxassetid://14186888710").Base
+local Base = import("rbxassetid://14217382721").Base
 local Assets = import("rbxassetid://5042114982").UpvalueScanner
 
 local Prompts = Base.Prompts
