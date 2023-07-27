@@ -34,6 +34,7 @@ local ResultStatus = ResultsClip.ResultStatus
 
 local modifyUpvalue = Prompt.new(Prompts.ModifyUpvalue)
 local modifyElement = Prompt.new(Prompts.ModifyElement)
+local customUpvalue = Prompt.new(Prompts.CustomUpvalueChange)
 local deepSearch = CheckBox.new(Filters.SearchInTables)
 local upvalueList = List.new(ResultsClip.Content)
 
@@ -611,7 +612,7 @@ changeUpvalueContext:SetCallback(changeUpvalue)
 changeTableContext:SetCallback(changeUpvalue)
 
 customUpvalueChange:SetCallback(function()
-        
+    customUpvalue:Show()
 end)
 
 changeElementContext:SetCallback(function()
