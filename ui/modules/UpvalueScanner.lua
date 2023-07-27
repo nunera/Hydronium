@@ -575,6 +575,7 @@ viewElementsContext:SetCallback(function()
         for i,v in pairs(selectedUpvalue.Value) do
             if not scanned[i] then
                 local elementLog = addElement(selectedUpvalueLog, selectedUpvalue, i, v, true)
+                print(selectedUpvalue)
                 elementLog.Parent = selectedUpvalueLog.Elements
                 newHeight = newHeight + elementLog.AbsoluteSize.Y + 5
                 temporaryElements[i] = elementLog
