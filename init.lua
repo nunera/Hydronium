@@ -1,4 +1,4 @@
-_G.Version = "v1.4.2"
+_G.Version = "v1.4.3"
 print("Attempting ".._G.Version.." load...")
 local environment = assert(getgenv, "<OH> ~ Your exploit is not supported")()
 
@@ -44,7 +44,7 @@ local globalMethods = {
     getContext = getthreadcontext or get_thread_context or (syn and syn.get_thread_identity),
     getConnections = get_signal_cons or getconnections,
     getScriptClosure = getscriptclosure or get_script_function,
-    --getNamecallMethod = getnamecallmethod or get_namecall_method,
+    getNamecallMethod = getnamecallmethod or get_namecall_method,
     getCallingScript = getcallingscript or get_calling_script,
     getLoadedModules = getloadedmodules or get_loaded_modules,
     getConstants = debug.getconstants or getconstants or getconsts,
