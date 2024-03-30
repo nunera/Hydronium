@@ -1,4 +1,4 @@
-_G.Version = "v1.4.4"
+_G.Version = "v1.4.5"
 print("Attempting ".._G.Version.." load...")
 local environment = assert(getgenv, "<OH> ~ Your exploit is not supported")()
 
@@ -33,6 +33,7 @@ Namecall = hookmetamethod(game, '__namecall', function(self, ...)
     return Namecall(self, ...)
 
 end)
+print("Successfully adonis bypassed?")
 -- end
 
 
