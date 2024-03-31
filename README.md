@@ -3,6 +3,10 @@
 loadstring(game:HttpGet("http://gg.gg/Hydronium"))()
 ```
 
+```
+if you're having problems updating, delete the cache at workspace/hydronium.
+```
+
 # Hydronium
 <i>General purpose pen-testing tool for games on the Roblox engine</i>
 
