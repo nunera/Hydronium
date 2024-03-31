@@ -581,7 +581,7 @@ end)
 viewElementsContext:SetCallback(function()
     local temporaryElements = selectedUpvalue and selectedUpvalue.TemporaryElements
     local newHeight = 0
-
+    print("\n---------------- HYDRONIUM ----------------\n\n")
     if temporaryElements then -- closes elements
         for index, _v in pairs(temporaryElements) do
             local elementLog = selectedUpvalueLog.Elements[toString(index)]
