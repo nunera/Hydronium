@@ -7,6 +7,9 @@ loadstring(game:HttpGet("http://gg.gg/Hydronium"))()
 if you're having problems updating, delete the cache at workspace/hydronium.
 ```
 
+### Upcoming
+` fix the stupid goddamn ui deciding it wants to stop working until you scroll all the way up `
+
 # Hydronium
 <i>General purpose pen-testing tool for games on the Roblox engine</i>
 
