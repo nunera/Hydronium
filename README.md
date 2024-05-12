@@ -17,9 +17,9 @@ loadstring(game:HttpGet("http://gg.gg/Hydronium"))()
 
 
 <p align="center">
-    <img src="https://cdn.discordapp.com/attachments/633079498572562452/1133314416604090470/68747470733a2f2f63646e2e646973636f72646170702e636f.png?ex=6641260c&is=663fd48c&hm=e0f5e07ca84db8de2597f04ec6c90c0265f279ed30044862dc06a9452af88073&"/>
+    <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/67439647/329820628-a97d23c4-7dd1-48c2-ad73-c05707128cea.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240512%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240512T014604Z&X-Amz-Expires=300&X-Amz-Signature=1b6b1c120190d4e08c1525aa973ee980fef64857abd1e25f3527744e2e02b34b&X-Amz-SignedHeaders=host&actor_id=67439647&key_id=0&repo_id=247790284"/>
     </br>
-    <img src="https://cdn.discordapp.com/attachments/633079498572562452/1133315156269613136/image.png?ex=664126bd&is=663fd53d&hm=f5ba04376a0c79c53d63989c17901d70529c9bf6c305c5154297e8fb55bae777&" width="677px"/>
+    <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/67439647/329820617-1d02b7de-33f2-4935-ae28-d926d947c608.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240512%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240512T014539Z&X-Amz-Expires=300&X-Amz-Signature=34cfaeb30b5e778b4ba527511ea701c0889c01edd311bbe6e6b17c69e6846dde&X-Amz-SignedHeaders=host&actor_id=67439647&key_id=0&repo_id=247790284" width="677px"/>
 </p>
 
 ## Features
