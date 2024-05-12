@@ -1,4 +1,4 @@
-*This is mainly a temporary fix to some things including the shitty and buggy ui of hydroxide.*
+*This is mainly a temporary fix to some things including the shitty and buggy ui of hydroxide. (+ adonis bypass)*
 
 ## Script
 ```lua
