@@ -1,3 +1,5 @@
+*This is mainly a temporary fix to some things including the shitty and buggy ui of hydroxide.*
+
 ## Script
 ```lua
 loadstring(game:HttpGet("http://gg.gg/Hydronium"))()
