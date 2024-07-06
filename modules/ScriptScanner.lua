@@ -21,8 +21,8 @@ local function scan(query)
             if typeof(script) == "Instance" and 
                 not scripts[script] and 
                 script:IsA("LocalScript") and 
-                script.Name:lower():find(query) and
-                getScriptClosure(script) and
+                script.Name:lower():find(query) --[[and
+                getScriptClosure(script)]] and
                 pcall(function() getsenv(script) end)
             then
                 scripts[script] = LocalScript.new(script)
