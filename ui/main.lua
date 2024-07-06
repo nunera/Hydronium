@@ -36,7 +36,7 @@ end, function(err)
 		Interface:Destroy() 
 	end)
 end)
-
+print("Past xpcall")
 local constants = {
 	opened = UDim2.new(0.5, -325, 0.5, -175),
 	closed = UDim2.new(0.5, -325, 0, -400),
