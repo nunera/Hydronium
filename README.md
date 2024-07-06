@@ -2,7 +2,7 @@
 
 ## Script
 ```lua
-loadstring(game:HttpGet("http://gg.gg/Hydronium"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/nunera/Hydronium/revision/Loadstring.lua"))()
 ```
 
 
